@@ -32,6 +32,9 @@ router.get('/message', controllers.message.get)
 // POST 用来处理微信转发过来的客服消息
 router.post('/message', controllers.message.post)
 
+// GET 自定义测试接口 hello 
 router.get('/hello', controllers.hello)
+
+router.get('/book', controllers.book)
 
 module.exports = router
