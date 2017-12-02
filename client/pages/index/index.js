@@ -112,6 +112,18 @@ Page({
                         console.log(res)
                         res = JSON.parse(res.data)
                         console.log(res)
+                        wx.request({
+                          url: 'https://lawro80g.qcloud.la/addGoods',
+                          data: {
+                            item_pics: res.data.imgUrl,
+                            parent_index: 1,
+                            item_price: 1000,
+                            item_name: 'cat'
+                          },
+                          success: res => {
+                            console.log('插入成功', res)
+                          }
+                        })
                         that.setData({
                             imgUrl: res.data.imgUrl
                         })
