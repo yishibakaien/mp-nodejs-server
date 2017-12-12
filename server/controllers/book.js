@@ -14,7 +14,9 @@ module.exports = async ctx => {
   var query = ctx.query
 
   // 查找数据库
-  var res = await mysql('books').where({book_index: query.book_index})
+  var res = await mysql('books').where({
+    book_index: query.book_index
+  })
   
   // 返回值
   ctx.state.data = res
